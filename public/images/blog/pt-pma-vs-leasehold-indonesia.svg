@@ -1,0 +1,31 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfdf5"/>
+      <stop offset="100%" style="stop-color:#f0fdfa"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="1050" cy="100" r="180" fill="#10b981" opacity="0.06"/>
+  <circle cx="150" cy="530" r="140" fill="#0d9488" opacity="0.06"/>
+  <circle cx="900" cy="480" r="100" fill="#10b981" opacity="0.04"/>
+
+  <rect x="100" y="200" width="60" height="4" rx="2" fill="url(#accent)"/>
+
+  <text x="100" y="185" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#10b981" letter-spacing="3">GUIDES</text>
+
+  <text x="100" y="270" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="800" fill="#111827">PT PMA vs</text>
+  <text x="100" y="335" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="800" fill="#111827">Leasehold in</text>
+  <text x="100" y="400" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="800" fill="url(#accent)">Indonesia</text>
+
+  <text x="100" y="460" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#6b7280">Which ownership structure should you use?</text>
+
+  <text x="100" y="560" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#111827">REALTYFY</text>
+  <text x="255" y="560" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#9ca3af">realtyfy.com/blog</text>
+</svg>
