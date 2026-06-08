@@ -46,7 +46,7 @@ export function HeroSection() {
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <span className="block text-sm font-semibold tracking-widest text-brand-500 uppercase mb-6">
@@ -62,7 +62,7 @@ export function HeroSection() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed"
         >
@@ -73,7 +73,7 @@ export function HeroSection() {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <form
@@ -113,7 +113,7 @@ export function HeroSection() {
 
         <motion.p
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }} viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-6 text-sm text-gray-400"
         >
