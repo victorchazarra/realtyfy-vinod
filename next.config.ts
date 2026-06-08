@@ -14,7 +14,19 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        // Keystatic admin — CSP relajado para que cargue su UI
+        source: "/keystatic(.*)",
+        headers: [
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          {
+            key: "Content-Security-Policy",
+            value: "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:;",
+          },
+        ],
+      },
+      {
+        source: "/((?!keystatic).*)",
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "X-Content-Type-Options", value: "nosniff" },
