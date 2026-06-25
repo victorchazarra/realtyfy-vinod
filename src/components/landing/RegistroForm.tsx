@@ -3,7 +3,6 @@
 import { useState } from 'react'
 
 export default function RegistroForm() {
-  const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -20,10 +19,13 @@ export default function RegistroForm() {
       return
     }
     setSending(true)
+    // Captura el lead (BBDD + webhook). keepalive: la petición sobrevive a la
+    // navegación, así que el lead se guarda aunque redirijamos acto seguido.
     try {
-      const res = await fetch('/api/leads', {
+      await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
         body: JSON.stringify({
           name,
           email,
@@ -32,37 +34,13 @@ export default function RegistroForm() {
           pageUrl: window.location.href,
         }),
       })
-      if (!res.ok) throw new Error()
-      setSent(true)
     } catch {
-      setError('No hemos podido registrarte. Inténtalo de nuevo.')
-      setSending(false)
+      // best-effort: redirigimos igualmente para no atrapar al usuario
     }
-  }
-
-  if (sent) {
-    return (
-      <div className="flex flex-col items-center gap-6 rounded-[16px] bg-white p-10 text-center shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-forest">
-          <svg width="24" height="24" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8 L7 12 L13 4" stroke="#F6F3EE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-        </span>
-        <p className="text-[13px] font-semibold uppercase tracking-[1.82px] text-copper">Acceso enviado</p>
-        <h3 className="font-heading text-[28px] font-bold leading-[1.2] tracking-[-0.7px] text-navy">Listo. Te lo envío al email.</h3>
-        <p className="max-w-[400px] text-base leading-[1.6] text-slate-600">
-          Te he mandado el enlace al vídeo y un pequeño resumen de lo que vas a ver. Si en unos
-          minutos no aparece, revisa promociones o spam.
-        </p>
-        <a href="#top" className="flex h-14 w-full items-center justify-center gap-2 rounded-[10px] bg-forest font-heading text-base font-semibold text-ivory hover:bg-forest-700">
-          Ver el vídeo ahora <span>›</span>
-        </a>
-        <button onClick={() => setSent(false)} className="flex h-12 w-full items-center justify-center rounded-[10px] font-heading text-sm font-semibold text-slate-600 hover:bg-ivory">
-          Volver a la web
-        </button>
-        <p className="max-w-[400px] text-xs leading-[1.6] text-slate-400">
-          También te escribiré al WhatsApp por si tienes alguna pregunta.
-        </p>
-      </div>
-    )
+    // Redirige al registro del webinar conservando las UTMs (y demás query params).
+    const dest = new URL('https://go.realtyfy.es/registro-w2105')
+    new URLSearchParams(window.location.search).forEach((v, k) => dest.searchParams.set(k, v))
+    window.location.href = dest.toString()
   }
 
   const label = 'text-[11px] font-semibold uppercase tracking-[1.54px] text-slate-600'
