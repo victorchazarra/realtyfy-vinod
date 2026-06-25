@@ -7,11 +7,21 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Dominio canónico: www.realtyfy.es. Todos los hosts .com redirigen ahí
+      // (la regla vieja www.realtyfy.com -> realtyfy.com hacía bucle con el
+      // apex->www de Vercel). 307 temporal para no cachear durante el setup;
+      // pasar a permanent:true cuando esté verificado.
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.realtyfy.com" }],
-        destination: "https://realtyfy.com/:path*",
-        permanent: true,
+        destination: "https://www.realtyfy.es/:path*",
+        permanent: false,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "realtyfy.com" }],
+        destination: "https://www.realtyfy.es/:path*",
+        permanent: false,
       },
       // Blog oculto temporalmente hasta tener artículos + diseño reales.
       // Reversible: borrar estas dos reglas para reactivarlo.
