@@ -1,18 +1,9 @@
 import type { MetadataRoute } from "next";
-import { getAllPostsMeta } from "@/lib/mdx";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://realtyfy.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllPostsMeta();
-
-  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.lastModified || post.date),
-    changeFrequency: "monthly",
-    priority: 0.9,
-  }));
-
+  // Blog oculto temporalmente — fuera del sitemap hasta tener contenido real.
   return [
     {
       url: SITE_URL,
@@ -20,13 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1.0,
     },
-    {
-      url: `${SITE_URL}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    ...blogEntries,
     {
       url: `${SITE_URL}/about`,
       lastModified: new Date(),

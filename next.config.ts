@@ -1,14 +1,32 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Landing hero/founder placeholders — Víctor will swap for real assets.
+    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
+  },
   async redirects() {
     return [
+      // Dominio canónico: www.realtyfy.com. Los hosts .es redirigen ahí.
+      // (realtyfy.com apex lo manda Vercel a www.realtyfy.com, que sirve la web.)
+      // 307 temporal para no cachear durante el setup; pasar a permanent:true
+      // cuando esté verificado.
       {
         source: "/:path*",
-        has: [{ type: "host", value: "www.realtyfy.com" }],
-        destination: "https://realtyfy.com/:path*",
-        permanent: true,
+        has: [{ type: "host", value: "www.realtyfy.es" }],
+        destination: "https://www.realtyfy.com/:path*",
+        permanent: false,
       },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "realtyfy.es" }],
+        destination: "https://www.realtyfy.com/:path*",
+        permanent: false,
+      },
+      // Blog oculto temporalmente hasta tener artículos + diseño reales.
+      // Reversible: borrar estas dos reglas para reactivarlo.
+      { source: "/blog", destination: "/", permanent: false },
+      { source: "/blog/:slug*", destination: "/", permanent: false },
     ];
   },
   async headers() {
