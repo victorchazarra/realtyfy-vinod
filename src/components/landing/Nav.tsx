@@ -4,7 +4,6 @@ import Image from 'next/image'
 const links = [
   { label: 'Cómo funciona', href: '#como-funciona' },
   { label: 'Para quién', href: '#para-quien' },
-  { label: 'Caso real', href: '#caso-real' },
   { label: 'FAQ', href: '#faq' },
 ]
 

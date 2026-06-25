@@ -6,7 +6,6 @@ import Giro from "@/components/landing/sections/Giro";
 import QueVasAVer from "@/components/landing/sections/QueVasAVer";
 import Sistema from "@/components/landing/sections/Sistema";
 import EsParaTi from "@/components/landing/sections/EsParaTi";
-import QuienDetras from "@/components/landing/sections/QuienDetras";
 import NoEsModa from "@/components/landing/sections/NoEsModa";
 import Faq from "@/components/landing/sections/Faq";
 import CtaFinal from "@/components/landing/sections/CtaFinal";
@@ -99,7 +98,6 @@ export default function Home() {
       <QueVasAVer />
       <Sistema />
       <EsParaTi />
-      <QuienDetras />
       <NoEsModa />
       <Faq />
       <CtaFinal />
