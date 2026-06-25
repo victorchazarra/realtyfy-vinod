@@ -6,7 +6,6 @@ const links = [
   { label: 'Para quién', href: '#para-quien' },
   { label: 'Caso real', href: '#caso-real' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '/blog' },
 ]
 
 export default function Nav() {

@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
         destination: "https://realtyfy.com/:path*",
         permanent: true,
       },
+      // Blog oculto temporalmente hasta tener artículos + diseño reales.
+      // Reversible: borrar estas dos reglas para reactivarlo.
+      { source: "/blog", destination: "/", permanent: false },
+      { source: "/blog/:slug*", destination: "/", permanent: false },
     ];
   },
   async headers() {

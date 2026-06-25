@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 const explora: { label: string; href?: string }[] = [
   { label: 'Método', href: '#como-funciona' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Sobre Víctor', href: '/about' },
   { label: 'Contacto', href: '#registro' },
 ]

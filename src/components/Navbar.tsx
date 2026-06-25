@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
-  const isBlogPost = pathname.startsWith("/blog/");
   const isNewsletter = pathname.startsWith("/newsletter");
   const isGift = pathname.startsWith("/gift");
   const isLabs = pathname === "/labs";
@@ -27,13 +26,6 @@ export function Navbar() {
 
         {/* Nav links */}
         <div className="flex items-center gap-6">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-gray-500 hover:text-brand-600 transition-colors"
-          >
-            {isBlogPost && <span>&larr;</span>}
-            {isBlogPost ? "Back to Blog" : "Blog"}
-          </Link>
           <Link
             href="/about"
             className="text-sm font-semibold text-gray-500 hover:text-brand-600 transition-colors"
