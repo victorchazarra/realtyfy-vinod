@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+
+// Heading font for the Spanish landing (Brand Book v3.0). Body text uses Inter,
+// loaded site-wide via the Google Fonts <link> below.
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Realtyfy | Invest in Indonesian Real Estate",
@@ -54,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.variable}>
       <head>
         {/* TODO(Realtyfy): replace with Victor's own Bing Webmaster verification code */}
         {/* <meta name="msvalidate.01" content="REPLACE_ME_BING_VERIFICATION" /> */}

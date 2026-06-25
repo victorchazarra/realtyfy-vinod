@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Landing hero/founder placeholders — Víctor will swap for real assets.
+    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
+  },
   async redirects() {
     return [
       {

@@ -8,6 +8,8 @@ export function Footer() {
   const isNewsletter = pathname.startsWith("/newsletter");
   const isGift = pathname.startsWith("/gift");
 
+  // Home renders the Spanish landing's own footer (components/landing/sections/Footer).
+  if (pathname === "/") return null;
   if (isNewsletter || isGift) return null;
 
   return (

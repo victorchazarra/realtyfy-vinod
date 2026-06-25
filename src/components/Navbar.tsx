@@ -9,7 +9,10 @@ export function Navbar() {
   const isNewsletter = pathname.startsWith("/newsletter");
   const isGift = pathname.startsWith("/gift");
   const isLabs = pathname === "/labs";
+  const isHome = pathname === "/";
 
+  // Home renders the Spanish landing's own header (components/landing/Nav).
+  if (isHome) return null;
   if (isNewsletter) return null;
   if (isGift) return null;
   if (isLabs) return null;
