@@ -34,7 +34,6 @@ export default function QuienDetras() {
           {/* Content */}
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
-              <p className="text-[13px] font-semibold uppercase tracking-[1.82px] text-slate-400">Quién te lo cuenta</p>
               <h2 className="font-heading text-[28px] font-bold leading-[1.15] tracking-[-0.85px] text-ivory md:text-[34px]">
                 Quién te lo cuenta
               </h2>
