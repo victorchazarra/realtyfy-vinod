@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const explora: { label: string; href?: string }[] = [
   { label: 'Método', href: '#como-funciona' },
@@ -27,15 +28,13 @@ export default function Footer() {
       <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-10 px-6 pb-10 pt-16">
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div className="flex max-w-sm flex-col gap-4">
-            <div className="flex items-center gap-2.5">
-              <svg width="32" height="20" viewBox="0 0 24 16" fill="none" aria-hidden="true">
-                <path d="M1 15 C7 15 9 1 14 1 M10 15 C16 15 18 5 23 5" stroke="#F6F3EE" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-              <span className="flex flex-col">
-                <span className="font-heading text-2xl font-bold tracking-[-0.5px] text-ivory">Realtyfy</span>
-                <span className="text-[10px] font-semibold tracking-[1.4px] text-slate-400">PATRIMONIO SIN FRONTERAS</span>
-              </span>
-            </div>
+            <Image
+              src="/realtyfy-logo-on-dark.png"
+              alt="Realtyfy — Patrimonio sin fronteras"
+              width={1068}
+              height={445}
+              className="h-16 w-auto"
+            />
             <p className="font-heading text-[17px] font-medium italic leading-[1.5] text-slate-400">Más espacio. Menos dependencia.</p>
           </div>
 
