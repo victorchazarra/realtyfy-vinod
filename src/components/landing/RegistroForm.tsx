@@ -38,7 +38,7 @@ export default function RegistroForm() {
       // best-effort: redirigimos igualmente para no atrapar al usuario
     }
     // Redirige al registro del webinar conservando las UTMs (y demás query params).
-    const dest = new URL('https://go.realtyfy.es/registro-w2105')
+    const dest = new URL('https://go.realtyfy.es/replay-w2105')
     new URLSearchParams(window.location.search).forEach((v, k) => dest.searchParams.set(k, v))
     window.location.href = dest.toString()
   }
