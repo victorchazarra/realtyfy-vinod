@@ -25,9 +25,9 @@ export default function NewsletterLayout({
 
       <footer className="bg-[#3a3a3a] border-t border-white/30">
         <div className="py-1.5 flex items-center justify-center gap-3 text-[11px] text-gray-400">
-          <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+          <Link href="/privacidad" className="hover:text-white transition-colors">Privacidad</Link>
           <span>·</span>
-          <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+          <Link href="/aviso-legal" className="hover:text-white transition-colors">Aviso legal</Link>
         </div>
       </footer>
     </>

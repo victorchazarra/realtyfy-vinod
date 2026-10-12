@@ -46,8 +46,9 @@ ${postLinks}
 - [Home](${SITE_URL}): Realtyfy homepage - Invest in Indonesian real estate
 - [Blog](${SITE_URL}/blog): Insights on investing in Indonesian property — market analysis, ownership rules, and yields
 - [RSS Feed](${SITE_URL}/feed.xml): Full-text RSS feed of all blog posts
-- [Privacy Policy](${SITE_URL}/privacy): Privacy policy
-- [Terms of Service](${SITE_URL}/terms): Terms of service
+- [Política de privacidad](${SITE_URL}/privacidad): Política de privacidad
+- [Aviso legal](${SITE_URL}/aviso-legal): Aviso legal
+- [Política de cookies](${SITE_URL}/cookies): Política de cookies
 
 ## Full Content
 

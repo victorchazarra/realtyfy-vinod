@@ -10,6 +10,7 @@ export function Footer() {
 
   // Home renders the Spanish landing's own footer (components/landing/sections/Footer).
   if (pathname === "/") return null;
+  if (["/privacidad", "/aviso-legal", "/cookies"].includes(pathname)) return null;
   if (isNewsletter || isGift) return null;
 
   return (
@@ -21,8 +22,9 @@ export function Footer() {
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-gray-400">
           <a href="mailto:hello@fanconvert.com" className="hover:text-gray-600 transition-colors">hello@fanconvert.com</a>
           <a href="tel:+12029928288" className="hover:text-gray-600 transition-colors">+1 (202) 992-8288</a>
-          <Link href="/terms" className="hover:text-gray-600 transition-colors">Terms & Conditions</Link>
-          <Link href="/privacy" className="hover:text-gray-600 transition-colors">Privacy</Link>
+          <Link href="/aviso-legal" className="hover:text-gray-600 transition-colors">Aviso legal</Link>
+          <Link href="/privacidad" className="hover:text-gray-600 transition-colors">Privacidad</Link>
+          <Link href="/cookies" className="hover:text-gray-600 transition-colors">Cookies</Link>
         </div>
       </div>
     </footer>

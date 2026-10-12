@@ -7,10 +7,9 @@ const explora: { label: string; href?: string }[] = [
   { label: 'Contacto', href: '#registro' },
 ]
 const legal: { label: string; href?: string }[] = [
-  { label: 'Aviso legal', href: '/terms' },
-  { label: 'Privacidad', href: '/privacy' },
-  { label: 'Cookies' },
-  { label: 'Disclaimer' },
+  { label: 'Aviso legal', href: '/aviso-legal' },
+  { label: 'Privacidad', href: '/privacidad' },
+  { label: 'Cookies', href: '/cookies' },
 ]
 const social = ['IN', 'X', 'YT']
 
@@ -69,7 +68,7 @@ export default function Footer() {
             información tiene carácter divulgativo; cada caso requiere análisis profesional
             independiente. Rentabilidades pasadas o estimadas no garantizan resultados futuros.
           </p>
-          <p className="shrink-0 text-xs text-slate-400">© 2026 Realtyfy</p>
+          <p className="shrink-0 text-xs text-slate-400">© 2026 Fan Convert LLC · Realtyfy es una marca de Fan Convert LLC</p>
         </div>
       </div>
     </footer>

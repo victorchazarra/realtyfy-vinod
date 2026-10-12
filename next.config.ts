@@ -23,6 +23,13 @@ const nextConfig: NextConfig = {
         destination: "https://www.realtyfy.com/:path*",
         permanent: false,
       },
+      // Textos legales en español (2026-10-12): las rutas antiguas en inglés redirigen.
+      { source: "/privacy", destination: "/privacidad", permanent: true },
+      { source: "/terms", destination: "/aviso-legal", permanent: true },
+      // Newsletter de la plantilla (beehiiv) fuera de uso: la política de privacidad
+      // no la contempla. Reversible: borrar estas dos reglas.
+      { source: "/newsletter", destination: "/", permanent: false },
+      { source: "/newsletter/:path*", destination: "/", permanent: false },
       // Blog oculto temporalmente hasta tener artículos + diseño reales.
       // Reversible: borrar estas dos reglas para reactivarlo.
       { source: "/blog", destination: "/", permanent: false },

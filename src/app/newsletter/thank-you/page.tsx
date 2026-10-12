@@ -204,8 +204,8 @@ export default function ThankYouPage() {
           Real analysis from the ground in Bali.
         </p>
         <div className="mt-8 flex gap-4 justify-center">
-          <a href="/privacy" className="text-xs text-gray-400 hover:text-gray-300 transition-colors">Privacy Policy</a>
-          <a href="/terms" className="text-xs text-gray-400 hover:text-gray-300 transition-colors">Terms of Service</a>
+          <a href="/privacidad" className="text-xs text-gray-400 hover:text-gray-300 transition-colors">Privacidad</a>
+          <a href="/aviso-legal" className="text-xs text-gray-400 hover:text-gray-300 transition-colors">Aviso legal</a>
         </div>
       </div>
 

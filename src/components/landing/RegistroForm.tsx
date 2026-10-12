@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 
+// Sube al cambiar la política de privacidad (src/content/legal/privacidad.md).
+const PRIVACY_VERSION = 'fc-privacidad-v2'
+
 export default function RegistroForm() {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -18,6 +21,10 @@ export default function RegistroForm() {
       setError('Completa nombre, email y teléfono.')
       return
     }
+    if (!data.get('privacy')) {
+      setError('Para continuar, acepta la política de privacidad.')
+      return
+    }
     setSending(true)
     // Captura el lead (BBDD + webhook). keepalive: la petición sobrevive a la
     // navegación, así que el lead se guarda aunque redirijamos acto seguido.
@@ -32,6 +39,9 @@ export default function RegistroForm() {
           phone,
           profile: (data.get('profile') as string) ?? '',
           pageUrl: window.location.href,
+          // Prueba del consentimiento (versión del texto legal aceptado).
+          privacy_version: PRIVACY_VERSION,
+          privacy_accepted_at: new Date().toISOString(),
         }),
       })
     } catch {
@@ -74,6 +84,10 @@ export default function RegistroForm() {
             <option>Otro</option>
           </select>
         </div>
+        <label className="flex items-start gap-3 text-[13px] leading-[1.5] text-slate-600">
+          <input type="checkbox" name="privacy" required className="mt-[3px] h-4 w-4 shrink-0 accent-forest" />
+          <span>He leído y acepto la <a href="/privacidad" target="_blank" className="underline underline-offset-2 hover:text-forest">política de privacidad</a>.</span>
+        </label>
         {error && <p className="text-sm text-copper-700">{error}</p>}
         <button type="submit" disabled={sending} className="flex h-14 items-center justify-center gap-2 rounded-[10px] bg-forest font-heading text-base font-semibold text-ivory hover:bg-forest-700 disabled:opacity-60">
           {sending ? 'Enviando…' : <>Ver el vídeo <span>›</span></>}
@@ -82,6 +96,9 @@ export default function RegistroForm() {
           <span className="block h-[5px] w-[5px] rounded-full bg-forest" />
           <span className="text-[13px] text-slate-600">Acceso inmediato · Sin compromiso · 100% legal</span>
         </div>
+        <p className="text-[11.5px] leading-[1.55] text-slate-500">
+          <strong className="font-semibold text-slate-600">Protección de datos.</strong> Responsable: Fan Convert LLC (Realtyfy). Usamos tus datos para darte acceso al vídeo y contactarte por teléfono, WhatsApp y email sobre lo que pides. Medimos qué parte del vídeo ves, grabamos las llamadas avisándote antes y resumimos nuestras conversaciones con ayuda de IA para atenderte mejor; puedes oponerte. Base: tu solicitud e interés legítimo. Tus datos se tratan en EE. UU. con garantías adecuadas. Derechos en privacidad@fanconvert.com. Más información en la <a href="/privacidad" target="_blank" className="underline underline-offset-2 hover:text-forest">política de privacidad</a>.
+        </p>
       </form>
     </div>
   )

@@ -12,6 +12,7 @@ export function Navbar() {
 
   // Home renders the Spanish landing's own header (components/landing/Nav).
   if (isHome) return null;
+  if (["/privacidad", "/aviso-legal", "/cookies"].includes(pathname)) return null;
   if (isNewsletter) return null;
   if (isGift) return null;
   if (isLabs) return null;
