@@ -62,6 +62,8 @@ Grabamos y transcribimos las llamadas y videollamadas con nuestro equipo para da
 
 Realtyfy no presta asesoramiento financiero, fiscal ni de inversión personalizado (ver el aviso legal).
 
+**Si te presentas a un puesto en Realtyfy** (por ejemplo, desde vendedores.realtyfy.com), tratamos tu nombre, email y teléfono, el vídeo que nos envíes y lo que nos cuentes en las entrevistas para valorar tu candidatura y contactarte durante el proceso. Base legal: medidas precontractuales a petición tuya (art. 6.1.b). Solo lo ven las personas que llevan la selección. Si no sigues en el proceso, borramos tus datos y tu vídeo 6 meses después de cerrarlo, el tiempo para atender posibles reclamaciones. Puedes pedir que los borremos antes.
+
 
 ### 6. Quién accede a tus datos {#destinatarios}
 
@@ -100,6 +102,7 @@ Fan Convert LLC tiene su sede en Estados Unidos, así que tus datos se tratan fu
 | Solicitudes que no llegan a una compra | 24 meses desde nuestro último contacto. Después los borramos o anonimizamos. Si vuelves a escribirnos, el plazo empieza de nuevo |
 | Conversaciones, grabaciones, transcripciones, ficha y datos de visionado del vídeo | Los mismos que la solicitud a la que pertenecen |
 | Compradores | Mientras dure la relación y, después, los plazos que exigen las obligaciones mercantiles y fiscales (con carácter general, 6 años) y los de prescripción de responsabilidades |
+| Candidaturas a un puesto que no siguen en el proceso | 6 meses desde que se cierra el proceso de selección |
 | Prueba de tu consentimiento y de que ejerciste tus derechos | Mientras siga el tratamiento y 3 años más |
 | Tu decisión sobre las cookies | 180 días |
 
