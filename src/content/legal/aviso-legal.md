@@ -8,7 +8,7 @@ Este aviso regula el acceso y el uso de **www.realtyfy.com y sus páginas de reg
 - **Número de identificación fiscal (EIN):** 37-2021183.
 - **Domicilio:** 30 N Gould St Ste R, Sheridan, WY 82801, Estados Unidos.
 - **Email:** privacidad@fanconvert.com · **Teléfono:** +1 (202) 992-8288.
-- **Marcas:** Fan Convert, Realtyfy y Víctor Chazarra son marcas bajo las que opera Fan Convert LLC. Cuando una página habla en primera persona, lo hace Fan Convert LLC a través de esa marca.
+- **Marca:** Realtyfy es una marca de Fan Convert LLC. Cuando una página de Realtyfy habla en primera persona, lo hace Fan Convert LLC a través de esa marca.
 
 ### 2. Uso del sitio
 
@@ -20,12 +20,13 @@ Al usar el sitio aceptas este aviso, la política de privacidad y la política d
 
 ### 3. Qué es este sitio
 
-**www.realtyfy.com y sus páginas de registro.** Realtyfy presenta villas en Indonesia de promotores con sede en ese país, y contenidos sobre cómo comprar allí. La compra no se hace en la web: se formaliza en un contrato con el promotor del proyecto, que se identifica y se entrega antes de cualquier reserva. Nada de lo publicado aquí es una oferta vinculante.
+Realtyfy presenta villas en Indonesia de promotores con sede en ese país, y contenidos sobre cómo comprar allí. La compra no se hace en la web: se formaliza en un contrato con el promotor del proyecto, que se identifica y se entrega antes de cualquier reserva. Nada de lo publicado aquí es una oferta vinculante.
+
 *Información, no asesoramiento.* Los contenidos son informativos y generales. Realtyfy no presta asesoramiento financiero, fiscal, legal ni de inversión personalizado, y ningún contenido es una recomendación personal. Comprar un inmueble en el extranjero implica riesgos: el valor y los ingresos pueden bajar, la venta puede no ser inmediata, y hay riesgo de divisa, de normativa local y de ejecución del promotor. Antes de decidir, consulta con asesores independientes (notario o PPAT en Indonesia, abogado y asesor fiscal). Las rentabilidades pasadas o estimadas no garantizan resultados futuros.
 
 ### 4. Menciones a terceros
 
-Las referencias a clientes, proyectos o citas se publican con su autorización o a partir de información pública. Si una referencia te afecta indebidamente, escríbenos y la revisaremos.
+Las referencias a proyectos, promotores o citas se publican con su autorización o a partir de información pública. Si una referencia te afecta indebidamente, escríbenos y la revisaremos.
 
 ### 5. Propiedad intelectual e industrial
 
