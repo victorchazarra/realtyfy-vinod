@@ -1,4 +1,4 @@
-Última actualización: 12 de octubre de 2026 · Versión 2
+Última actualización: 9 de noviembre de 2026 · Versión 3
 
 Aquí explicamos qué datos tuyos tratamos en Realtyfy, para qué, durante cuánto tiempo y qué derechos tienes. Realtyfy es una marca de Fan Convert LLC, que es quien trata tus datos. Esta política se aplica a www.realtyfy.com y a sus páginas de registro, vídeo y calendario (por ejemplo, 90plus.realtyfy.es).
 
@@ -42,7 +42,7 @@ Base legal: interés legítimo (art. 6.1.f). Puedes oponerte escribiendo a priva
 
 ### 4. Grabación de llamadas y videollamadas {#grabaciones}
 
-Grabamos y transcribimos las llamadas y videollamadas con nuestro equipo para dar continuidad a tu caso, revisar la calidad de la atención y poder acreditar qué se te explicó. Te lo diremos siempre al empezar y, en las videollamadas, también en la confirmación de la cita. **Si prefieres que no se grabe, dilo:** tomaremos notas a mano y lo respetaremos en las siguientes. Base legal: medidas precontractuales e interés legítimo (art. 6.1.b y 6.1.f).
+Grabamos y transcribimos las llamadas y videollamadas con nuestro equipo para dar continuidad a tu caso, revisar la calidad de la atención y poder acreditar qué se te explicó. Te avisamos antes de grabar, normalmente en la confirmación o en los recordatorios de la cita. **Si prefieres que no se grabe, dínoslo en cualquier momento** y dejaremos de hacerlo. Base legal: medidas precontractuales e interés legítimo (art. 6.1.b y 6.1.f).
 
 ### 5. Para qué usamos tus datos {#realtyfy}
 
