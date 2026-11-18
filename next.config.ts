@@ -36,8 +36,31 @@ const nextConfig: NextConfig = {
       { source: "/blog/:slug*", destination: "/", permanent: false },
     ];
   },
+  async rewrites() {
+    return [
+      // Marketplace de oportunidades (canal privado, noindex): proyecto Vercel
+      // `realtyfy-marketplace`, servido aquí bajo /marketplace.
+      {
+        source: "/marketplace",
+        destination: "https://realtyfy-marketplace.vercel.app/marketplace",
+      },
+      {
+        source: "/marketplace/:path*",
+        destination: "https://realtyfy-marketplace.vercel.app/marketplace/:path*",
+      },
+    ];
+  },
   async headers() {
     return [
+      {
+        // Marketplace: privado, fuera de buscadores. Sin el CSP de la web
+        // (es otro proyecto con sus propios recursos).
+        source: "/marketplace/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+        ],
+      },
       {
         // Keystatic admin — CSP relajado para que cargue su UI
         source: "/keystatic(.*)",
@@ -51,7 +74,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/((?!keystatic).*)",
+        source: "/((?!keystatic|marketplace).*)",
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "X-Content-Type-Options", value: "nosniff" },
