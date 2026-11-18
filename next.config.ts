@@ -1,3 +1,4 @@
+import { readdirSync } from "node:fs";
 import type { NextConfig } from "next";
 
 // Investor decks en /deck/<nombre> → slug del deck en deck.realtyfy.com.
@@ -10,6 +11,20 @@ const DECKS: Record<string, string> = {
   "bonian-village": "bonian-village",
 };
 const RUTAS_DECK = "deck|investor-deck|modelo|assets|contracts";
+
+// Funnels (funnels.fanconvert.com) servidos aquí en /<prefijo>/<ruta>: lo que no es
+// una página de esta web se reenvía a la plataforma, que lo atiende como el dominio
+// www.realtyfy.com del cliente (fan-convert/fanconvert-funnels, src/lib/front.ts).
+// FUNNELS_ORIGEN solo se cambia para probar en local contra otro funnels.
+const FUNNELS_ORIGEN = process.env.FUNNELS_ORIGEN || "https://funnels.fanconvert.com";
+const FUNNELS_VIA = `${FUNNELS_ORIGEN}/_via/www.realtyfy.com`;
+
+// Secciones propias de la web (carpetas de src/app): solo ellas llevan su CSP.
+// Lo demás lo sirve otro proyecto (marketplace, decks, funnels) con sus recursos.
+const SECCIONES_WEB = readdirSync("src/app", { withFileTypes: true })
+  .filter((e) => e.isDirectory() && /^[a-z0-9-]+$/.test(e.name) && e.name !== "keystatic")
+  .map((e) => e.name)
+  .join("|");
 
 const nextConfig: NextConfig = {
   images: {
@@ -48,7 +63,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
-    return [
+    const propias = [
       // Marketplace de oportunidades (canal privado, noindex): proyecto Vercel
       // `realtyfy-marketplace`, servido aquí bajo /marketplace.
       {
@@ -77,7 +92,19 @@ const nextConfig: NextConfig = {
         source: `/${dir}/:path*`,
         destination: `${DECK_ORIGEN}/${dir}/:path*`,
       })),
+      // Funnels: archivos del build, formularios y eventos de sus páginas.
+      { source: "/fc-static/:path*", destination: `${FUNNELS_ORIGEN}/fc-static/:path*` },
+      { source: "/api/funnels/:path*", destination: `${FUNNELS_VIA}/api/funnels/:path*` },
+      { source: "/api/geo", destination: `${FUNNELS_VIA}/api/geo` },
     ];
+    return {
+      afterFiles: propias,
+      // Funnels: cualquier /<prefijo> o /<prefijo>/<ruta> que no exista en esta web.
+      fallback: [
+        { source: "/:a", destination: `${FUNNELS_VIA}/:a` },
+        { source: "/:a/:b", destination: `${FUNNELS_VIA}/:a/:b` },
+      ],
+    };
   },
   async headers() {
     return [
@@ -111,12 +138,24 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Todo lo que pasa por este dominio, sea de la web o de otro proyecto.
         source: `/((?!keystatic|marketplace|${RUTAS_DECK}).*)`,
         headers: [
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-XSS-Protection", value: "1; mode=block" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+      // CSP y resto de cabeceras de la web: solo en sus páginas (la portada y sus
+      // secciones). Un funnel carga píxeles, vídeo y fuentes que este CSP bloquearía.
+      ...["/", `/:seccion(${SECCIONES_WEB})/:path*`].map((source) => ({
+        source,
+        headers: [
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-XSS-Protection", value: "1; mode=block" },
           {
             key: "Content-Security-Policy",
             value:
@@ -127,12 +166,8 @@ const nextConfig: NextConfig = {
             value:
               "camera=(), microphone=(), geolocation=(), interest-cohort=()",
           },
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
-          },
         ],
-      },
+      })),
     ];
   },
 };
