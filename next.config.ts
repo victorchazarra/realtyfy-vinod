@@ -51,6 +51,12 @@ const nextConfig: NextConfig = {
         destination: "https://www.realtyfy.com/:path*",
         permanent: false,
       },
+      // Oferta del directo del 18-nov: enlace corto para decir en voz alta y para el QR.
+      {
+        source: "/oferta",
+        destination: "https://90plus.realtyfy.es/directo-18nov/oferta",
+        permanent: false,
+      },
       // Textos legales en español (2026-10-12): las rutas antiguas en inglés redirigen.
       { source: "/privacy", destination: "/privacidad", permanent: true },
       { source: "/terms", destination: "/aviso-legal", permanent: true },
