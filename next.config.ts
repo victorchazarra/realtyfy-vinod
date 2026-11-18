@@ -1,5 +1,16 @@
 import type { NextConfig } from "next";
 
+// Investor decks en /deck/<nombre> → slug del deck en deck.realtyfy.com.
+const DECK_ORIGEN = "https://deck.realtyfy.com";
+const DECKS: Record<string, string> = {
+  sumba: "sumbahills",
+  "sumba-hills": "sumbahills",
+  "palm-field": "palmfield",
+  bonian: "bonian-village",
+  "bonian-village": "bonian-village",
+};
+const RUTAS_DECK = "deck|investor-deck|modelo|assets|contracts";
+
 const nextConfig: NextConfig = {
   images: {
     // Landing hero/founder placeholders — Víctor will swap for real assets.
@@ -48,6 +59,24 @@ const nextConfig: NextConfig = {
         source: "/marketplace/:path*",
         destination: "https://realtyfy-marketplace.vercel.app/marketplace/:path*",
       },
+      // Investor decks (copia diaria de los de Lawang, proyecto de deck.realtyfy.com),
+      // servidos aquí en /deck/<nombre>. El código del deck pide sus recursos con rutas
+      // absolutas (/investor-deck, /modelo, /assets, /contracts), que se reenvían igual.
+      // Las páginas llevan la barra final en el destino: el proyecto de decks la exige
+      // y Next la quita, así que sin ella habría un bucle de 308.
+      ...Object.entries(DECKS).map(([nombre, slug]) => ({
+        source: `/deck/${nombre}`,
+        destination: `${DECK_ORIGEN}/investor-deck/${slug}/`,
+      })),
+      ...[...new Set(Object.values(DECKS))].map((slug) => ({
+        source: `/investor-deck/${slug}`,
+        destination: `${DECK_ORIGEN}/investor-deck/${slug}/`,
+      })),
+      { source: "/modelo/:slug", destination: `${DECK_ORIGEN}/modelo/:slug/` },
+      ...["investor-deck", "assets", "contracts"].map((dir) => ({
+        source: `/${dir}/:path*`,
+        destination: `${DECK_ORIGEN}/${dir}/:path*`,
+      })),
     ];
   },
   async headers() {
@@ -56,6 +85,14 @@ const nextConfig: NextConfig = {
         // Marketplace: privado, fuera de buscadores. Sin el CSP de la web
         // (es otro proyecto con sus propios recursos).
         source: "/marketplace/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+        ],
+      },
+      {
+        // Decks: privados, fuera de buscadores y sin el CSP de la web.
+        source: `/:dir(${RUTAS_DECK})/:path*`,
         headers: [
           { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
           { key: "X-Content-Type-Options", value: "nosniff" },
@@ -74,7 +111,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/((?!keystatic|marketplace).*)",
+        source: `/((?!keystatic|marketplace|${RUTAS_DECK}).*)`,
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "X-Content-Type-Options", value: "nosniff" },
