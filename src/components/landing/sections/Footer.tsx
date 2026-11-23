@@ -2,9 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const explora: { label: string; href?: string }[] = [
-  { label: 'Método', href: '#como-funciona' },
+  { label: 'Método', href: '/#como-funciona' },
   { label: 'Sobre Víctor', href: '/about' },
-  { label: 'Contacto', href: '#registro' },
+  { label: 'Equipo', href: '/equipo' },
+  { label: 'Contacto', href: '/#registro' },
 ]
 const legal: { label: string; href?: string }[] = [
   { label: 'Aviso legal', href: '/aviso-legal' },

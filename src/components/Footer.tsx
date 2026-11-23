@@ -10,7 +10,7 @@ export function Footer() {
 
   // Home renders the Spanish landing's own footer (components/landing/sections/Footer).
   if (pathname === "/") return null;
-  if (["/privacidad", "/aviso-legal", "/cookies"].includes(pathname)) return null;
+  if (["/privacidad", "/aviso-legal", "/cookies", "/equipo"].includes(pathname)) return null;
   if (isNewsletter || isGift) return null;
 
   return (
