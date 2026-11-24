@@ -46,13 +46,6 @@ export default function Home() {
     url: SITE_URL,
     description:
       "Realtyfy ayuda a empresarios e inversores a desplegar su capital fuera de España de forma serena y 100% legal, con estructura internacional y propiedad freehold.",
-    founder: {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#victor-chazarra`,
-      name: "Víctor Chazarra",
-      jobTitle: "Founder",
-    },
-    sameAs: ["https://www.linkedin.com/in/chazarra/"],
   };
 
   const websiteLd = {
@@ -65,18 +58,6 @@ export default function Home() {
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 
-  const personLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${SITE_URL}/#victor-chazarra`,
-    name: "Víctor Chazarra",
-    jobTitle: "Founder, Realtyfy",
-    description:
-      "8 años invirtiendo sobre el terreno en Indonesia. Fundó Realtyfy para que el patrimonio tenga la misma libertad que su dueño.",
-    worksFor: { "@id": `${SITE_URL}/#organization` },
-    sameAs: ["https://www.linkedin.com/in/chazarra/"],
-  };
-
   return (
     <div className="bg-ivory font-body text-navy">
       <script
@@ -86,10 +67,6 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
       <Nav />
       <Hero />

@@ -29,10 +29,6 @@ Realtyfy is a real estate investment resource focused on the Indonesian property
 - Emerging investment locations across Indonesia
 - Risks, due diligence, and how to buy safely
 
-## Founder
-
-- Victor Chazarra — Founder, Realtyfy. Real estate investor focused on the Indonesian market.
-
 ## Website
 
 ${SITE_URL}

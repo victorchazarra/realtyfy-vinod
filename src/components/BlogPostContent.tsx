@@ -38,10 +38,10 @@ interface BlogPostContentProps {
 }
 
 const AUTHORS: Record<string, { name: string; linkedin: string; title: string }> = {
-  "Victor Chazarra": {
-    name: "Victor Chazarra",
-    linkedin: "https://www.linkedin.com/in/chazarra/",
-    title: "Founder of Realtyfy",
+  "Realtyfy Team": {
+    name: "Realtyfy Team",
+    linkedin: "/",
+    title: "Realtyfy",
   },
 };
 
@@ -63,7 +63,7 @@ export function BlogPostContent({
     timeZone: "UTC",
   });
 
-  const authorInfo = (author && AUTHORS[author]) || AUTHORS["Victor Chazarra"];
+  const authorInfo = (author && AUTHORS[author]) || AUTHORS["Realtyfy Team"];
 
   const [firstHalf, secondHalf] = splitContentAtMidpoint(content);
 

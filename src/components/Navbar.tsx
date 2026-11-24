@@ -28,10 +28,10 @@ export function Navbar() {
         {/* Nav links */}
         <div className="flex items-center gap-6">
           <Link
-            href="/about"
+            href="/equipo"
             className="text-sm font-semibold text-gray-500 hover:text-brand-600 transition-colors"
           >
-            About
+            Equipo
           </Link>
         </div>
       </nav>

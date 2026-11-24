@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://realtyfy.com";
 const SITE_NAME = "Realtyfy";
 const DEFAULT_DESCRIPTION =
-  "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from Victor Chazarra.";
+  "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from the Realtyfy team.";
 
 interface GenerateMetadataOptions {
   title: string;

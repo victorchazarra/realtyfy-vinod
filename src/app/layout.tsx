@@ -18,7 +18,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Realtyfy | Invest in Indonesian Real Estate",
   description:
-    "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from Victor Chazarra.",
+    "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from the Realtyfy team.",
   metadataBase: new URL("https://realtyfy.com"),
   openGraph: {
     type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Realtyfy",
     title: "Realtyfy | Invest in Indonesian Real Estate",
     description:
-      "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from Victor Chazarra.",
+      "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from the Realtyfy team.",
     images: [
       {
         url: "https://realtyfy.com/og-default.png",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     site: "@realtyfy",
     title: "Realtyfy | Invest in Indonesian Real Estate",
     description:
-      "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from Victor Chazarra.",
+      "Realtyfy helps you invest in Indonesian real estate with confidence. Market analysis, foreign ownership guidance, and investment insights from the Realtyfy team.",
     images: ["https://realtyfy.com/og-default.png"],
   },
   robots: {
@@ -66,9 +66,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={manrope.variable}>
       <head>
-        {/* TODO(Realtyfy): replace with Victor's own Bing Webmaster verification code */}
+        {/* TODO(Realtyfy): replace with Realtyfy's own Bing Webmaster verification code */}
         {/* <meta name="msvalidate.01" content="REPLACE_ME_BING_VERIFICATION" /> */}
-        {/* TODO(Realtyfy): replace GTM-XXXXXXX with Victor's own Google Tag Manager container ID, then uncomment.
+        {/* TODO(Realtyfy): replace GTM-XXXXXXX with Realtyfy's own Google Tag Manager container ID, then uncomment.
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -90,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           href="/feed.xml"
         />
         <link rel="llms" href="/llms.txt" />
-        {/* TODO(Realtyfy): replace data-key with Victor's own Ahrefs Web Analytics key, then uncomment.
+        {/* TODO(Realtyfy): replace data-key with Realtyfy's own Ahrefs Web Analytics key, then uncomment.
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="REPLACE_ME_AHREFS_KEY"
@@ -104,7 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         >
           Skip to content
         </a>
-        {/* TODO(Realtyfy): re-enable with Victor's own GTM container ID when GTM is configured.
+        {/* TODO(Realtyfy): re-enable with Realtyfy's own GTM container ID when GTM is configured.
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"

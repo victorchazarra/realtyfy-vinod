@@ -32,7 +32,7 @@ const SECCIONES_WEB = readdirSync("src/app", { withFileTypes: true })
 
 const nextConfig: NextConfig = {
   images: {
-    // Landing hero/founder placeholders — Víctor will swap for real assets.
+    // Landing hero/founder placeholders — to be swapped for real assets.
     remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
   async redirects() {
@@ -66,6 +66,10 @@ const nextConfig: NextConfig = {
       // no la contempla. Reversible: borrar estas dos reglas.
       { source: "/newsletter", destination: "/", permanent: false },
       { source: "/newsletter/:path*", destination: "/", permanent: false },
+      // Páginas personales del fundador retiradas (2026-11-24): no debe aparecer en la web.
+      { source: "/about", destination: "/equipo", permanent: true },
+      { source: "/author/:path*", destination: "/", permanent: true },
+      { source: "/images/team-victor.jpg", destination: "/", permanent: true },
       // Blog oculto temporalmente hasta tener artículos + diseño reales.
       // Reversible: borrar estas dos reglas para reactivarlo.
       { source: "/blog", destination: "/", permanent: false },

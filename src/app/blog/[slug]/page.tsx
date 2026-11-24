@@ -41,7 +41,7 @@ export async function generateStaticParams() {
 
 function resolveAuthorName(author?: string): string {
   if (author && author !== "Sucana") return author;
-  return "Victor Chazarra";
+  return "Realtyfy Team";
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -84,15 +84,7 @@ export default async function BlogPostPage({ params }: Props) {
   // Extract FAQ Q&A pairs from rendered HTML for FAQPage schema
   const faqPairs = extractFaqFromHtml(contentOptimized);
 
-  const authorProfiles: Record<string, { url: string; sameAs: string[]; page: string }> = {
-    "Victor Chazarra": {
-      url: `${SITE_URL}/author/victor-chazarra`,
-      sameAs: ["https://www.linkedin.com/in/chazarra/"],
-      page: "/author/victor-chazarra",
-    },
-  };
   const authorName = resolveAuthorName(post.author);
-  const authorProfile = authorProfiles[authorName] || authorProfiles["Victor Chazarra"];
 
   // BlogPosting JSON-LD structured data (enhanced for LLM + E-E-A-T)
   const blogPostingLd = {
@@ -104,16 +96,9 @@ export default async function BlogPostPage({ params }: Props) {
     wordCount: post.content.replace(/<[^>]*>/g, '').split(/\s+/).filter(Boolean).length,
     isPartOf: { "@id": "https://realtyfy.com/#website" },
     author: {
-      "@type": "Person",
-      "@id": `https://realtyfy.com/about#${authorName.toLowerCase().replace(/\s+/g, "-")}`,
+      "@type": "Organization",
       name: authorName,
-      url: authorProfile.url,
-      jobTitle: "Founder, Realtyfy",
-      worksFor: {
-        "@type": "Organization",
-        name: "Realtyfy",
-      },
-      sameAs: authorProfile.sameAs,
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",

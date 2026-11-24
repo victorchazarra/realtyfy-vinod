@@ -15,7 +15,7 @@ export default function Hero() {
           <p className="text-[19px] leading-[1.55] text-slate-400">
             Hay una forma serena y 100% legal de desplegar tu capital fuera de España, conservar lo
             que genera —reinvirtiendo el beneficio con un 0% de impuestos— y seguir viviendo donde
-            quieres. Sin mudarte. Te lo explico, con criterio y los números delante, en este vídeo.
+            quieres. Sin mudarte. Te lo explicamos, con criterio y los números delante, en este vídeo.
           </p>
           <div className="mt-4 flex flex-col items-start gap-3">
             <a href="#registro" className="rounded-[10px] bg-forest px-8 py-[18px] font-heading text-[17px] font-semibold text-ivory transition-colors hover:bg-forest-700">
@@ -27,10 +27,6 @@ export default function Hero() {
             <span>8 años sobre el terreno</span><span>·</span>
             <span>+50 proyectos entregados</span><span>·</span>
             <span>100% propiedad real (freehold)</span>
-          </div>
-          <div className="flex items-center gap-3 pt-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-2xl bg-forest font-heading text-sm font-bold text-ivory">V</span>
-            <span className="text-sm text-slate-400">Lo explica Víctor — 8 años sobre el terreno en Indonesia.</span>
           </div>
         </div>
 

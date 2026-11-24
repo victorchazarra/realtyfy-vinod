@@ -16,7 +16,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const base: Metadata = {
     title: "Realtyfy Blog | Investing in Indonesian Real Estate",
     description:
-      "Market analysis, foreign ownership rules, rental yields, and where to buy — insights on investing in Indonesian real estate from Victor Chazarra.",
+      "Market analysis, foreign ownership rules, rental yields, and where to buy — insights on investing in Indonesian real estate from the Realtyfy team.",
     alternates: {
       canonical: `${SITE_URL}/blog`,
     },
@@ -66,10 +66,9 @@ export default function BlogPage() {
       "Insights on investing in Indonesian real estate — market analysis, ownership rules, rental yields, and due diligence.",
     url: `${SITE_URL}/blog`,
     author: {
-      "@type": "Person",
-      name: "Victor Chazarra",
-      jobTitle: "Founder",
-      url: "https://www.linkedin.com/in/chazarra/",
+      "@type": "Organization",
+      name: "Realtyfy",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
@@ -79,9 +78,6 @@ export default function BlogPage() {
         "@type": "ImageObject",
         url: `${SITE_URL}/og-default.png`,
       },
-      sameAs: [
-        "https://www.linkedin.com/in/chazarra/",
-      ],
     },
     mainEntity: {
       "@type": "ItemList",

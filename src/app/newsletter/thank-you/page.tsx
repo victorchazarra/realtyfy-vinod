@@ -234,7 +234,7 @@ export default function ThankYouPage() {
               Reply with your biggest question about investing in Indonesia.
             </p>
             <p className="text-base text-gray-900 leading-relaxed">
-              Victor reads every reply.
+              We read every reply.
             </p>
           </div>
         </div>

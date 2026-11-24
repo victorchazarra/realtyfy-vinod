@@ -31,7 +31,7 @@ export default config({
         }),
         coverImage: fields.text({ label: 'Cover Image Path' }),
         readingTime: fields.text({ label: 'Reading Time', defaultValue: '5 min read' }),
-        author: fields.text({ label: 'Author', defaultValue: 'Victor Chazarra' }),
+        author: fields.text({ label: 'Author', defaultValue: 'Realtyfy Team' }),
         featured: fields.checkbox({ label: 'Featured', defaultValue: false }),
         content: fields.markdoc({ label: 'Content' }),
       },

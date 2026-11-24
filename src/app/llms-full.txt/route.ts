@@ -12,7 +12,6 @@ export async function GET() {
 > Realtyfy helps you invest in Indonesian real estate with confidence — market analysis, foreign ownership guidance, and on-the-ground investment insights.
 
 Website: ${SITE_URL}
-Founder: Victor Chazarra (Founder, Realtyfy — real estate investor focused on the Indonesian market)
 
 ---
 `);
@@ -36,7 +35,7 @@ Founder: Victor Chazarra (Founder, Realtyfy — real estate investor focused on 
 
 URL: ${SITE_URL}/blog/${post.slug}
 Published: ${post.date}
-Author: ${post.author || "Victor Chazarra"}
+Author: ${post.author || "Realtyfy Team"}
 Tags: ${post.tags.join(", ")}
 
 ${plainText}
