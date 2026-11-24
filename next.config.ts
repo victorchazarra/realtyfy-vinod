@@ -11,6 +11,8 @@ const DECKS: Record<string, string> = {
   "bonian-village": "bonian-village",
   mejan: "mejan-village",
   "mejan-village": "mejan-village",
+  tamarind: "tamarind-rise",
+  "tamarind-rise": "tamarind-rise",
 };
 const RUTAS_DECK = "deck|investor-deck|modelo|assets|contracts";
 
