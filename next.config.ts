@@ -88,6 +88,11 @@ const nextConfig: NextConfig = {
         source: "/marketplace/:path*",
         destination: "https://realtyfy-marketplace.vercel.app/marketplace/:path*",
       },
+      // Ofertas de Black Friday (2026-11-26): enlace corto a la página del marketplace.
+      ...["/blackfriday", "/black-friday"].map((source) => ({
+        source,
+        destination: "https://realtyfy-marketplace.vercel.app/marketplace/black-friday",
+      })),
       // Investor decks (copia diaria de los de Lawang, proyecto de deck.realtyfy.com),
       // servidos aquí en /deck/<nombre>. El código del deck pide sus recursos con rutas
       // absolutas (/investor-deck, /modelo, /assets, /contracts), que se reenvían igual.
